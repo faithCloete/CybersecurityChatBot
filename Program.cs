@@ -11,6 +11,12 @@ namespace CybersecurityChatbot
     {//start of class
         static void Main(string[] args)
         {//start of main method
+
+             //greeting.wav code
+ VoicePrompt voiceprompt = new VoicePrompt();
+
+ //calling voice method
+ voiceprompt.Voice();
             
             //creating an instance for the class GreetAndName with an object name greeting_and_name
             GreetAndName chatbot = new GreetAndName();
