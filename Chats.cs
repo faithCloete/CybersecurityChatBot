@@ -62,28 +62,39 @@ namespace CybersecurityChatbot
             bool found = false;
 
             //loop through each word user typed
-            foreach (string word in words)
-            {
-                //skip ignored words
-                if (ignoring.Contains(word))
-                {
-                    continue;
-                }
+           foreach (string word in words)
+ {
+     //skip ignored words
+     if (ignoring.Contains(word))
+     {
+         continue;
+     }
 
-                //check each answer
-                foreach (string answer in answers)
-                {
-                    //if answer contains keyword
-                    if (answer.Contains(word))
-                    {
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine("Cybersecurity Bot: " + answer);
-                        Console.ResetColor();
+     //SECOND loop (this is what you're missing or broke)
+     foreach (string answer in answers)
+     {
+         //split answer into keyword and message
+         string[] parts = answer.Split(':');
 
-                        found = true;
-                    }
-                }
-            }
+         string keyword = parts[0];
+         string message = parts[1];
+
+         if (word == keyword)
+         {
+             Console.ForegroundColor = ConsoleColor.White;
+             Console.WriteLine("Cybersecurity Bot: " + message);
+             Console.ResetColor();
+
+             found = true;
+             break;
+         }
+     }
+
+     if (found)
+     {
+         break;
+     }
+ }
 
             //if nothing matched
             if (!found)
