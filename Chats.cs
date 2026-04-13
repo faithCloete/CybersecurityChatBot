@@ -47,6 +47,28 @@ namespace CybersecurityChatbot
         //method to check input and respond
         private bool EndChat(string question)
         {
+             //check if user says thank you
+ if (question.ToLower().Contains("thank"))
+ {
+     Console.ForegroundColor = ConsoleColor.White;
+     Console.WriteLine("Cybersecurity Bot: You're welcome! Is there anything else I can help you with? (yes/no)");
+     Console.ResetColor();
+
+     //get response
+     string response = Console.ReadLine().ToLower();
+
+     if (response == "no")
+     {
+         Console.ForegroundColor = ConsoleColor.White;
+         Console.WriteLine("Cybersecurity Bot: Alright, stay safe online. Goodbye!");
+         Console.ResetColor();
+         return false; //end chat
+     }
+     else
+     {
+         return true; //continue chat
+     }
+ }
             //check if user wants to exit
             if (question.ToLower() == "exit")
             {
