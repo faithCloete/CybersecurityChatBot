@@ -1,66 +1,86 @@
-# CybersecurityChatBot (part 1)
+ Cybersecurity Awareness Chatbot (Part 1)
 
 Description
-This project is a C# console-based Cybersecurity Awareness Chatbot designed to educate South African citizens about common online threats such as phishing, weak passwords, and unsafe browsing practices.
+This project is a C# console-based Cybersecurity Awareness Chatbot developed to educate South African citizens about common cyber threats such as phishing, weak passwords, and unsafe browsing.
 
-The chatbot interacts with users in a conversational manner, providing guidance on how to stay safe online while simulating real-life cyber threat scenarios.
+The chatbot simulates real-life interactions and provides guidance on how users can protect themselves online while maintaining an engaging conversational experience.
 
-1. Features (Current Progress)
-    User Greeting System
-  - Displays a styled welcome message
-  - Prompts the user for their name
-  - Validates input to ensure a name is entered
-    
-2. Enhanced Console UI
-  - Uses colour formatting for readability
-  - Includes structured layout and borders
-  - Displays an ASCII art logo at startup
-    
-3. Interactive Chat System
-  - Allows continuous conversation with the user
-  - Responds to cybersecurity-related keywords such as:
-    - Password safety
-    - Phishing
-    - Safe browsing
-  - Handles unknown inputs with a fallback response
-  - Allows the user to exit the chat by typing `exit`
+Features
 
-4. Keyword Detection Logic
-  - Breaks user input into words
-  - Ignores unnecessary words (e.g. "what", "is")
-  - Matches keywords to predefined cybersecurity responses
+User Interaction
+- Prompts user for their name
+- Validates input to ensure a name is entered
+- Personalises responses using the user’s name
 
- Project Structure
+Chatbot Functionality
+- Continuous conversation loop
+- Responds to user queries using keyword detection
+- Handles:
+  - Password safety
+  - Phishing awareness
+  - Safe browsing practices
+- Answers general questions such as:
+  - “How are you?”
+  - “What is your purpose?”
+  - “What can I ask you?”
+- Handles unknown input with a fallback response
+- Allows user to exit by typing `exit`
 
-The project is structured using multiple classes for clarity and maintainability:
+ Conversational Flow
+- Detects when a user says “thank you”
+- Responds politely
+- Asks if further assistance is needed
+- Ends the chat if the user responds with “no”
 
-- `Program.cs` → Entry point of the application  
-- `GreetAndName.cs` → Handles greeting and user name input  
-- `Chats.cs` → Manages chatbot interaction and responses  
+ Console User Interface
+- Uses colour formatting for improved readability
+- Structured layout with headings and spacing
+- Displays an ASCII art logo at startup
+
+ Voice Greeting
+- Plays a `.wav` audio greeting when the application starts
+- Enhances user experience with a more interactive feel
+
+Project Structure
+
+- 'Program.cs" → Application entry point and program flow  
+- `GreetAndName.cs → Handles greeting and user input  
+- 'Chats.cs → Manages chatbot logic and responses
+- 'VoicePrompt.cs' - voice greeting
 
  How to Run the Program
 
-1. Open the project in Visual Studio 
+1. Open the project in Visual Studio  
 2. Build the solution  
-3. Run the program  
-4. Follow the prompts in the console  
- Work in Progress
+3. Run the application  
+4. Ensure the file `greeting.wav` is included in the project and set to:
+   - **Copy to Output Directory → Copy if newer**  
+5. Follow the prompts in the console  
 
-The following features are still being implemented:
+Continuous Integration (CI)
 
-- Voice greeting using a `.wav` file  
-- Continuous Integration (CI) setup via GitHub Actions  
-- Final documentation updates  
+This project uses **GitHub Actions** for Continuous Integration.
 
----
+- Automatically builds the project on every push  
+- Ensures the application compiles successfully  
+- Provides validation through workflow checks  
 
- Technologies Used
+📷 *Screenshot of successful CI run included below:*
+
+
+Technologies Used
 
 - C#  
-- .NET  
+- .NET Framework  
 - Console Application  
 - GitHub (Version Control)  
+- GitHub Actions (CI/CD)
 
- CI Status
+ Project Status
 
-*(Screenshot will be added once CI is fully configured and passing)*
+✅ Core chatbot functionality complete  
+✅ User interaction and validation implemented  
+✅ Keyword-based response system working  
+✅ ASCII UI and styling complete  
+✅ Voice greeting integrated  
+⏳ CI verification does not work 
